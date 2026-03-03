@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Animated Color Change Website</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            overflow: hidden;
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            background-size: 300% 300%;
+            animation: moveGradient 8s ease infinite;
+            transition: background 0.8s ease;
+        }
+
+        @keyframes moveGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: rgba(0,0,0,0.4);
+            position: fixed;
+            width: 100%;
+            top: 0;
+        }
+
+        header h1 {
+            color: white;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .section {
+            height: 100vh;
+            padding-top: 200px;
+            text-align: center;
+            color: white;
+        }
+
+        button {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 30px;
+            background: white;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.4s;
+        }
+
+        button:hover {
+            background: yellow;
+            transform: scale(1.1);
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            background: rgba(0,0,0,0.4);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>My Website</h1>
+    <nav>
+        <a>Home</a>
+        <a>About</a>
+        <a>Services</a>
+        <a>Contact</a>
+    </nav>
+</header>
+
+<div class="section">
+    <h2>Click Button to Change Background Animation 🎨</h2>
+    <br>
+    <button onclick="changeBackground()">Click Me</button>
+</div>
+
+<footer>
+    © 2026 Animated Color Change Project
+</footer>
+
+<script>
+    function changeBackground() {
+
+        let gradients = [
+            "linear-gradient(45deg, #ff6b6b, #feca57)",
+            "linear-gradient(45deg, #48dbfb, #1dd1a1)",
+            "linear-gradient(45deg, #5f27cd, #c56cf0)",
+            "linear-gradient(45deg, #ff9ff3, #f368e0)",
+            "linear-gradient(45deg, #00f2fe, #4facfe)"
+        ];
+
+        let random = Math.floor(Math.random() * gradients.length);
+
+        document.body.style.background = gradients[random];
+        document.body.style.backgroundSize = "300% 300%";
+        document.body.style.animation = "moveGradient 6s ease infinite";
+    }
+</script>
+
+</body>
+</html>
