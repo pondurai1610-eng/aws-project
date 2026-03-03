@@ -1,0 +1,2 @@
+# aws-project
+sample project
